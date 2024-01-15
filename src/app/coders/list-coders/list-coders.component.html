@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row justify-content-between align-items-end">
+      <div class="col-6 bg-red">
+        <h1 class="display-5">Coders</h1>
+      </div>
+      <div class="col-6 text-end ">
+        <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#createCoderPopup">New Coder</button>
+        <app-create-coder></app-create-coder>
+      </div>
+    </div>
+    <div *ngIf="displayTable" class="my-5">
+      <table id="myTable" datatable class="row-border hover mt-5" style="margin-top:100px;">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>Operations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let coder of coderList">
+            <td >{{coder.code}}</td>
+            <td>{{coder.lastName}}</td>
+            <td>{{coder.firstName}}</td>
+            <td>{{coder.email}}</td>
+            <td>
+              <div class="d-flex align-items-center justify-content-center  text-center ">
+                <button class="btn btn-link text-white" data-bs-toggle="modal" data-bs-target="#updateCoderPopup" (click)="setCoder($event, coder)"><i class="bi bi-pencil-fill text-dark m-3" ></i></button>
+                <button class="btn btn-link text-white" data-bs-toggle="modal" data-bs-target="#deleteCoderPopup" (click)="setCoder($event, coder)"><i class="bi bi-trash-fill text-dark m-3" ></i></button>
+                <a  href="#" class="text-white"><i class="bi bi-eye-fill text-dark  m-3"></i></a>
+              </div>
+            </td>
+          </tr>
+        
+        </tbody>
+      </table>
+      <app-update-coder [coder]="coder"></app-update-coder>
+      <app-delete-coder [coder]="coder"></app-delete-coder>
+    </div>
+    <a href="dashboard">Go back</a>
+  </div>
+  
+  

@@ -1,0 +1,68 @@
+<div class="modal" tabindex="-1" id="updateCoderPopup" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h2>New Coder</h2>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="updateCoderForm" (ngSubmit)="updateCoder()" action="closePopup.emit()" class="bg-black text-light p-3">
+                    <div class="form-outline form-white mb-4 text-start">
+                        <!--Avatar-->
+                        <div class="d-flex justify-content-center mb-4">
+                            <img id="selectedUpdateAvatar" [src]="pictureUpdate || 'assets/images/avatar.png'" class="rounded-circle"
+                                style="width: 200px; height: 200px; object-fit: cover;" alt="example placeholder" />
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="btn btn-primary btn-rounded">
+                                <label class="form-label text-white m-1" for="coderUpdatePicture">Choose file</label>
+                                <input  type="file" class="form-control d-none" id='coderUpdatePicture'
+                                (change)="displayImageUpdate($event)" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-outline form-white mb-4 text-start">
+                        <label class="form-label" for="codeUpdateInput">Code</label>
+                        <input type="text" id="codeUpdateInput" class="form-control form-control-lg" formControlName="code" [(ngModel)]="coder === undefined? '': coder.code" />
+                        <div class="text-danger mt-3" *ngIf="isFieldInvalid('code') && isFieldTouched('code')">
+                            code is mandatory.
+                        </div>
+                    </div>
+
+                    <div class="form-outline form-white mb-4 text-start">
+                        <label class="form-label" for="firstNameUpdateInput">First Name</label>
+                        <input type="text" id="firstNameUpdateInput" class="form-control form-control-lg"
+                            formControlName="firstName" [(ngModel)]="coder === undefined? '':coder.firstName"/>
+                        <div class="text-danger mt-3"
+                            *ngIf="isFieldInvalid('firstName') && isFieldTouched('firstName')">
+                            first name is mandatory.
+                        </div>
+                    </div>
+
+                    <div class="form-outline form-white mb-4 text-start">
+                        <label class="form-label" for="lastNameUpdateInput">Last Name</label>
+                        <input type="text" id="lastNameUpdateInput" class="form-control form-control-lg"
+                            formControlName="lastName" [(ngModel)]="coder === undefined? '':coder.lastName"/>
+                        <div class="text-danger mt-3" *ngIf="isFieldInvalid('lastName') && isFieldTouched('lastName')">
+                            last name is mandatory.
+                        </div>
+                    </div>
+
+                    <div class="form-outline form-white mb-4 text-start">
+                        <label class="form-label" for="emailUpdateInput">Email</label>
+                        <input type="text" id="emailUpdateInput" class="form-control form-control-lg"
+                            formControlName="email" [(ngModel)]="coder === undefined? '':coder.email" />
+                        <div class="text-danger mt-3" *ngIf="isFieldInvalid('email') && isFieldTouched('email')">
+                            email is invalid.
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-light px-5" type="submit"
+                            [disabled]="updateCoderForm.invalid">Save</button>
+                        <button #closeUpdatePopupButton type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+/* Adjust style as needed */
+.scrollable-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.scrollable-content {
+    display: inline-block;
+}

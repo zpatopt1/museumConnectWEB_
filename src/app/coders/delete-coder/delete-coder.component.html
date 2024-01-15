@@ -1,0 +1,49 @@
+<div class="modal" tabindex="-1" id="deleteCoderPopup" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h2>New Coder</h2>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="deleteCoderForm" (ngSubmit)="deleteCoder()" action="closePopup.emit()" class="bg-black text-light p-3">
+                    <div class="form-outline form-white mb-4 text-start">
+                        <label class="form-label" for="codeInput">Code</label>
+                        <input type="text" id="codeInput" class="form-control form-control-lg" 
+                            [disabled]="true"
+                            formControlName="code" [(ngModel)]="coder === undefined? '': coder.code" />
+                        
+                    </div>
+
+                    <div class="form-outline form-white mb-4 text-start">
+                        <label class="form-label" for="firstNameInput">First Name</label>
+                        <input type="text" id="firstNameInput" class="form-control form-control-lg"
+                            [disabled]="true"
+                            formControlName="firstName" [(ngModel)]="coder === undefined? '':coder.firstName"/>
+                            
+                    </div>
+
+                    <div class="form-outline form-white mb-4 text-start">
+                        <label class="form-label" for="lastNameInput">Last Name</label>
+                        <input type="text" id="lastNameInput" class="form-control form-control-lg"
+                            [disabled]="true"
+                            formControlName="lastName" [(ngModel)]="coder === undefined? '':coder.lastName"/>
+                        
+                    </div>
+
+                    <div class="form-outline form-white mb-4 text-start">
+                        <label class="form-label" for="emailInput">Email</label>
+                        <input type="text" id="emailInput" class="form-control form-control-lg"
+                            [disabled]="true"
+                            formControlName="email" [(ngModel)]="coder === undefined? '':coder.email" />
+                       
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-light px-5" type="submit">Delete</button>
+                        <button #closePopupButton type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
