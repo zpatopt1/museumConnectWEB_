@@ -1,12 +1,6 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light text-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="assets/images/ciy.webp" alt="ciylogo" height="50px">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+
         <div class="collapse navbar-collapse mt-2" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
@@ -41,13 +35,27 @@
                     <a class="nav-link disabled" aria-disabled="true">Link</a>
                 </li>
             </ul>
-            <span class="me-5 text-light">{{currentUser.email}}</span>
+            
+            <!-- Centralizando a marca (logo e texto) -->
+            <div class="d-flex justify-content-center align-items-center">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="assets/images/iconelogo.png" alt="MuseumConnect" height="50px" class="me-2"> MuseumConnect
+                </a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
             <div>
-                <a *ngIf="isLogedIn; else isLogedOut"  class="nav-item text-light me-5" href="home">Sign out</a>
+                <span class="me-5 text-dark">{{currentUser.email}}</span>
+                <a *ngIf="isLogedIn; else isLogedOut"  class="nav-item text-dark me-5" href="home">Sign out</a>
                 <ng-template #isLogedOut>
-                    <a class="nav-item text-light me-5"  href="login">Sign in</a>
+                    <a class="nav-item text-dark me-5"  href="login">Sign in</a>
                 </ng-template>
             </div>
         </div>
+
     </div>
 </nav>
