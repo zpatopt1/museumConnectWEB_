@@ -9,6 +9,7 @@ import { EventService } from '../../event.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
+
 })
 export class LoginComponent {
   loginForm: FormGroup;
@@ -20,7 +21,7 @@ export class LoginComponent {
     private router: Router) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/)]]
+      password: ['', [Validators.required, /*Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/)*/]]
     });
     this.user = {
       email: '',

@@ -1,1 +1,104 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css';
+/* @import 'bootstrap.min.css'; */
+
+html, body{
+    height: 100%;
+}
+
+.login-bg-image {
+    background: url("https://www.remessaonline.com.br/blog/wp-content/uploads/2022/05/museus-mais-famosos-do-mundo-1200x675.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+  
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.border-left {
+  border-left: 2px solid var(--primary) !important;
+}
+
+.sidebar {
+  top: 0;
+  left: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.overlay {
+  background-color: rgb(0 0 0 / 45%);
+  z-index: 99;
+}
+
+@media screen and (max-width: 767px) {
+  .sidebar {
+    max-width: 18rem;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-out;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+}
+
+/*Cartõpes dos cartões da dashboard */
+.custom-card {
+  border-radius: 8px;
+	color: white;
+	padding: 10px;
+	position: relative;
+}
+
+.custom-card .title {
+  display: inline-block;
+  font-size: 8px;
+  padding: 10px 10px 0;
+  text-transform: uppercase;
+}
+.custom-card .icon {
+  color: white;
+  font-size: 28px;
+  opacity: 0.3;
+  position: absolute;
+  right: 13px;
+  top: 13px;
+}
+
+.custom-card .value {
+  font-size: 28px;
+  padding: 0 10px;
+}
+
+.custom-card .statistic {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 8px;
+  margin-top: 25px;
+  padding: 10px 10px 0;
+  text-transform: uppercase;
+}
+
+.blue {
+  background-color: #2298F1;
+}
+
+.green {
+  background-color: #66B92E;
+}
+
+.orange {
+  background-color: #DA932C;
+}
+
+.red {
+  background-color: #D65B4A;
+}
